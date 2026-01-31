@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Tools Dashboard</title>
+  <link rel="stylesheet" href="home.css">
+
+  <!-- LOGIN PROTECTION -->
+  <script>
+    if (sessionStorage.getItem("loggedIn") !== "true") {
+      window.location.href = "../index.html";
+    }
+  </script>
+</head>
+<body>
+
+<header class="top-header">
+  <div class="brand">
+    <img src="logo.png" class="brand-logo" alt="Flabs">
+  </div>
+
+  <!-- LOGOUT BUTTON -->
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</header>
+
+<div class="dashboard">
+  <h1>🔵 Data Processing Tools</h1>
+  <p>Select a module to continue</p>
+
+  <div class="cards">
+
+    <!-- Duplicate Tool -->
+    <a href="../duplicate-tool/index.html" class="card">
+      <div class="icon">📄</div>
+      <h2>Duplicate Tool</h2>
+      <p>
+        Identify duplicates, keep one record,
+        calculate duplicate percentage and clean data.
+      </p>
+      <span class="open">Open Tool →</span>
+    </a>
+
+    <!-- Test Matching Tool -->
+    <a href="../test-matching/index.html" class="card">
+      <div class="icon">🔍</div>
+      <h2>Test Matching</h2>
+      <p>
+        Match tests between sheets, update prices,
+        highlight changes and export Excel.
+      </p>
+      <span class="open">Open Tool →</span>
+    </a>
+
+  </div>
+</div>
+
+<script>
+  function logout() {
+    sessionStorage.clear();
+    window.location.href = "../index.html";
+  }
+</script>
+
+</body>
+</html>
